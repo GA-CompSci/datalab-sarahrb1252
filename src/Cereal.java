@@ -13,13 +13,23 @@ public class Cereal {
     // Declare your 5 private instance variables here:
     // name, calories, fiber, carbohydrates, cups
 
-
+    private String name;
+    private int calories;  
+    private int fiber;
+    private int carbohydrates; 
+    private double cups;
 
 
     // Write your constructor here
     // It should take 5 parameters in this order:
     // String name, int calories, int fiber, int carbohydrates, double cups
-
+    public Cereal(String name, int calories, int fiber, int carbohydrates, double cups){
+        this.name = name;
+        this.calories = calories;
+        this.fiber = fiber; 
+        this.carbohydrates = carbohydrates; 
+        this.cups = cups;
+    }
 
 
 
@@ -30,15 +40,30 @@ public class Cereal {
     // getCarbohydrates() - returns int
     // getCups() - returns double
 
-
-
+    String getName (){
+        return getName();
+    }
+    int getCalories (){
+        return getCalories();
+    }
+    int getFiber(){
+        return getFiber();
+    }
+    int getCarbohydrates(){
+        return getCarbohydrates();
+    }
+    double getCups(){
+        return getCups();
+    }
 
 
 
     // Write your toString() method here
     // Should return a String with all the cereal data
     // Example: "100% Bran - Calories: 70, Fiber: 10g, Carbs: 5g, Serving: 0.33 cups"
-
+    public String toString(){
+        return name + " - Calories: " + calories + " - Fiber: " + fiber + " - Carbs: " + carbohydrates + " - Serving: " + cups;
+    }
 
 
 
