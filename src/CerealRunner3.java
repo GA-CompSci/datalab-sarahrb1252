@@ -34,13 +34,18 @@ public class CerealRunner3 {
     public static ArrayList<Cereal> filterCarbsPerCup(int min, int max) {
         ArrayList <Cereal> result = new ArrayList<>();
         for (int i = 0; i < result.size() ; i ++){
-            
+            double carbsPerCup = cereals.get(i).getCarbohydrates() / cereals.get(i).getCups();
+            if ( carbsPerCup >= min && carbsPerCup <= max){
+                result.add(cereals.get(i));
+            }else {
+                return null;
+            }
         }
 
 
 
 
-        return null;  // Replace with your code
+        return result;  // Replace with your code
     }
 
     /**
@@ -61,11 +66,21 @@ public class CerealRunner3 {
      * @return Cereal with highest fiber percentage, or null if empty
      */
     public static Cereal highestPercentFiber() {
+        if (cereals.size() == 0){
+            return null;
+        }
+        double bestSoFar = cereals.get(0).getFiber() / cereals.get(0).getCalories();
+        int bestSoFarIndex = 0;
 
+        for (int i = 1; i < cereals.size(); i ++){
+            double fiberPercent = cereals.get(i).getFiber() / cereals.get(i).getCalories();
+            if (fiberPercent > bestSoFar){
+                bestSoFar = fiberPercent;
+                bestSoFarIndex = i;
+            }
+        }
 
-
-
-        return null;  // Replace with your code
+        return cereals.get(bestSoFarIndex);  // Replace with your code
     }
 
     /**
@@ -77,12 +92,16 @@ public class CerealRunner3 {
      * @return net carbs
      */
     public static double findNetCarbs(Cereal c) {
+        double netCarbs = c.getCarbohydrates() - c.getFiber();
+        if(netCarbs < 0){
+            String badData = "Bad Data";
+            return netCarbs;
+        }else {
+            return netCarbs;
 
-
-
-        return 0;  // Replace with your code
+        }
     }
-
+    
     // ========================================================================
     // DO NOT EDIT BELOW THIS LINE
     // The main method will test your three methods above
