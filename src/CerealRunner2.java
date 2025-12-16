@@ -42,7 +42,7 @@ public class CerealRunner2 {
             while (true) {
                 if (!filScanner.hasNextLine()) {
                     filScanner.close();
-                    System.out.println("Loaded " + cereals.size() + " cereals.\n");
+                    System.out.println(cereals.size() + " Records Created " );
                     break;
                 }
                 String theNextLine = filScanner.nextLine();

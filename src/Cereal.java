@@ -36,23 +36,23 @@ public class Cereal {
     // Write your 5 getter methods here
     // getName() - returns String
      String getName (){
-        return getName();
+        return name;
     }
     // getCalories() - returns int
     int getCalories (){
-        return getCalories();
+        return calories;
     }
     // getFiber() - returns int
     int getFiber(){
-        return getFiber();
+        return fiber;
     }
     // getCarbohydrates() - returns int
      int getCarbohydrates(){
-        return getCarbohydrates();
+        return carbohydrates;
     }
     // getCups() - returns double
     double getCups(){
-        return getCups();
+        return cups;
     }
 
 

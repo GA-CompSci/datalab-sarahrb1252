@@ -32,20 +32,15 @@ public class CerealRunner3 {
      * @return ArrayList of cereals meeting criteria
      */
     public static ArrayList<Cereal> filterCarbsPerCup(int min, int max) {
-        ArrayList <Cereal> result = new ArrayList<>();
-        for (int i = 0; i < result.size() ; i ++){
+        ArrayList<Cereal> result = new ArrayList<>();
+        for (int i = 0; i < cereals.size(); i++) {
             double carbsPerCup = cereals.get(i).getCarbohydrates() / cereals.get(i).getCups();
-            if ( carbsPerCup >= min && carbsPerCup <= max){
+            if (carbsPerCup >= min && carbsPerCup <= max) {
                 result.add(cereals.get(i));
-            }else {
-                return null;
             }
         }
 
-
-
-
-        return result;  // Replace with your code
+        return result;
     }
 
     /**
@@ -66,21 +61,21 @@ public class CerealRunner3 {
      * @return Cereal with highest fiber percentage, or null if empty
      */
     public static Cereal highestPercentFiber() {
-        if (cereals.size() == 0){
+        if (cereals.size() == 0) {
             return null;
         }
         double bestSoFar = cereals.get(0).getFiber() / cereals.get(0).getCalories();
         int bestSoFarIndex = 0;
 
-        for (int i = 1; i < cereals.size(); i ++){
+        for (int i = 1; i < cereals.size(); i++) {
             double fiberPercent = cereals.get(i).getFiber() / cereals.get(i).getCalories();
-            if (fiberPercent > bestSoFar){
+            if (fiberPercent > bestSoFar) {
                 bestSoFar = fiberPercent;
                 bestSoFarIndex = i;
             }
         }
 
-        return cereals.get(bestSoFarIndex);  // Replace with your code
+        return cereals.get(bestSoFarIndex); // Replace with your code
     }
 
     /**
@@ -93,15 +88,10 @@ public class CerealRunner3 {
      */
     public static double findNetCarbs(Cereal c) {
         double netCarbs = c.getCarbohydrates() - c.getFiber();
-        if(netCarbs < 0){
-            String badData = "Bad Data";
-            return netCarbs;
-        }else {
-            return netCarbs;
 
-        }
+        return netCarbs;
     }
-    
+
     // ========================================================================
     // DO NOT EDIT BELOW THIS LINE
     // The main method will test your three methods above
@@ -173,8 +163,8 @@ public class CerealRunner3 {
         System.out.println("\n=== Data Validation: Testing Specific Cereals ===");
         for (Cereal c : cereals) {
             if (c.getName().equals("All-Bran with Extra Fiber") ||
-                c.getName().equals("Apple Jacks") ||
-                c.getName().equals("Cocoa Puffs")) {
+                    c.getName().equals("Apple Jacks") ||
+                    c.getName().equals("Cocoa Puffs")) {
                 System.out.println("\nCereal: " + c.getName() + ", NetCarbs: " + findNetCarbs(c));
             }
         }
